@@ -8,3 +8,4 @@ D:\JPTVR18\C#_IVKHK\StudentApp\StudentApp\obj\Debug\netcoreapp2.1\StudentApp.Ass
 D:\JPTVR18\C#_IVKHK\StudentApp\StudentApp\obj\Debug\netcoreapp2.1\StudentApp.AssemblyInfo.cs
 D:\JPTVR18\C#_IVKHK\StudentApp\StudentApp\obj\Debug\netcoreapp2.1\StudentApp.dll
 D:\JPTVR18\C#_IVKHK\StudentApp\StudentApp\obj\Debug\netcoreapp2.1\StudentApp.pdb
+D:\JPTVR18\C#_IVKHK\StudentApp\StudentApp\obj\Debug\netcoreapp2.1\StudentApp.csprojAssemblyReference.cache
