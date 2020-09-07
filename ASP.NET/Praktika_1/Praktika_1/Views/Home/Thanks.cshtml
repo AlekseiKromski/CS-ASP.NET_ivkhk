@@ -1,0 +1,26 @@
+﻿@model Praktika_1.Models.GuestResponse
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<h1>Thanks! Your request done</h1>
+@if (Model.WillAtted == true)
+{
+
+    <div class="alert alert-success">
+        Wait y, <b>@Model.Name</b>
+    </div>
+
+}
+else
+{
+    <div class="alert alert-danger">
+        Bad :(, <b>@Model.Name</b>
+
+    </div>
+}
+<hr />
+<button class="btn btn-info">
+    @Html.ActionLink("Home page", "Index",null, null, new { @style = "color: white" })
+</button>
