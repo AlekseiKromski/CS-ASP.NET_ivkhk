@@ -1,0 +1,16 @@
+﻿x   `@model Praktika_1.Models.ContactResponse
+
+@{
+    ViewBag.Title = "Thanks_Contact";
+}
+
+<h1>Thanks! Your request done</h1>
+
+<div class="alert alert-success">
+    Thank for your message, <b>@Model.Firstname @Model.Lastname</b>
+</div>
+
+<hr />
+<button class="btn btn-info">
+    @Html.ActionLink("Home page", "Index", null, null, new { @style = "color: white" })
+</button>

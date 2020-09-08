@@ -23,7 +23,7 @@ namespace Praktika_1.Controllers
         public string Start()
         {
             return "Hello, world";
-        } 
+        }
 
         [HttpGet]// SHOW FORM
         public ViewResult RegisterForm()
@@ -34,7 +34,35 @@ namespace Praktika_1.Controllers
         [HttpPost]
         public ViewResult RegisterForm(GuestResponse gs)
         {
-            return View("Thanks", gs);
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", gs);
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        [HttpGet]
+        public ViewResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Contact(ContactResponse cr)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks_Contact", cr);
+
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
