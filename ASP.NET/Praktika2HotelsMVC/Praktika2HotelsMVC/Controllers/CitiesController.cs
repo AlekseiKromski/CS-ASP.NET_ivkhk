@@ -29,5 +29,18 @@ namespace Praktika2HotelsMVC.Controllers
                 return HttpNotFound();
             }
         }
+
+        public ActionResult Cities()
+        {
+            ViewBag.Cities = CitiesCollection.listCities;
+            return View();
+        }
+
+        public ActionResult Hotels(int id = 0)
+        {
+            ViewBag.Cities = CitiesCollection.listCities;
+            ViewBag.CityId = id;
+            return View();
+        }
     }
 }

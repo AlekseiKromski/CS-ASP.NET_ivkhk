@@ -28,7 +28,7 @@ namespace Praktika2HotelsMVC.Models
                 Title = "Tartu",
                 Hotels = new List<Hotel>()
                 {
-                new Hotel {id = 1 , name = "Art Hotel Pallas", services = "Air conditioning Free Wifi Breakfast", img = "PallasTarty.png", address = "Riia, 4"},
+                new Hotel {id = 4 , name = "Art Hotel Pallas", services = "Air conditioning Free Wifi Breakfast", img = "PallasTarty.png", address = "Riia, 4"},
                 }
             });
             listCities.Add(new City
@@ -37,7 +37,7 @@ namespace Praktika2HotelsMVC.Models
                 Title = "Toila",
                 Hotels = new List<Hotel>()
                  {
-                 new Hotel { id = 6, name = "Toila Spa Hotel", services = "Спа и оздоровительный центр Бассейн Бесплатная парковка ", img = "Toila.png", address = "Ranna, 12" }
+                 new Hotel { id = 5, name = "Toila Spa Hotel", services = "Спа и оздоровительный центр Бассейн Бесплатная парковка ", img = "Toila.png", address = "Ranna, 12" }
                  }
             });
 
