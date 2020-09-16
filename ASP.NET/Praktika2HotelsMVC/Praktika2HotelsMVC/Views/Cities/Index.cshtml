@@ -16,12 +16,6 @@
                         <img src="~/Content/@hotel.img" class="card-img-top img_card" alt="">
                         <div class="card-body">
                             <h4 class="card-title"><b>@hotel.name</b></h4>
-                            <p class="card-text">
-                                <b>Services: </b> @hotel.services
-                            </p>
-                            <p class="card-text">
-                                <b>Address: </b> @hotel.address
-                            </p>
                             @Html.ActionLink("Детали", "Details", new { id = hotel.id}, new { @class = "btn btn-primary" })
                         </div>
                     </div>
@@ -31,5 +25,6 @@
         </div>
         <hr />
     </div>
+    
 }
 
