@@ -22,4 +22,3 @@ namespace football.Models
         public Team Team { get; set; }
     }
 }
-}
