@@ -17,7 +17,7 @@ namespace football.Controllers
         // GET: Players
         public ActionResult Index()
         {
-            var players = db.Players.Include(p => p.Team);
+            var players = db.Players.Include(p => p.Team).OrderBy(a => a.Name).ToList();
             return View(players.ToList());
         }
 
