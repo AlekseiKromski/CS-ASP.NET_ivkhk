@@ -1,0 +1,53 @@
+﻿@model WebApplication1.Models.Painter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Художники и картины</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>@Model.name</h4>
+            <p>
+                <b>
+                    Country:
+                </b>
+                @Model.country
+            </p>
+            @if (Model.photo != null)
+            {
+                <img src="@Url.Action("GetImage", new { Model.id })" class="img-rounded img" />
+            }
+            <p class="margint-2">
+                <b>
+                    Biography:
+                </b>
+                @Model.biography
+            </p>
+        </div>
+    </div>
+</div>
+<!-- После того, как будет работать система картин
+<h2>Картины художника @Model.name</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <h4>@Model.name</h4>
+            <p>
+                <b>
+                    Museum:
+                </b>
+
+            </p>
+            @if (Model.photo != null)
+            {
+                <img src="@Url.Action("GetImage", new { Model.id })" class="img-rounded img" />
+            }
+        </div>
+    </div>
+</div>
+    -->
+<p>
+    @Html.ActionLink("Художники", "Index")
+</p>
