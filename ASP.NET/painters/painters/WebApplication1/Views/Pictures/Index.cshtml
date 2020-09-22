@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication1.Models.Picture>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var picture in Model)
+        {
+            <div class="col-md-3 text-center">
+                <h3>@picture.title</h3>
+                <h4>@picture.painter</h4>
+                @if (picture.canvas != null)
+                {
+                    <img src="@Url.Action("GetImage", new { picture.id })" class="img-rounded img" />
+                }
+                <div class="margint-2">
+                    @Html.ActionLink("Edit", "Edit", new { id = picture.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = picture.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = picture.id })
+                </div>
+            </div>
+        }
+    </div>
+</div>

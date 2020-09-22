@@ -24,10 +24,14 @@ textarea {
 }
 .img{
     width:100%;
+    height:255px;
 }
 .margint-2{
     margin-top:2%;
 }
 .img-edit {
     width: 30%;
+}
+.img-details {
+    width: 50%;
 }

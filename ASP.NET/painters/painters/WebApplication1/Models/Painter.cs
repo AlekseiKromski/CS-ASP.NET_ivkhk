@@ -17,8 +17,17 @@ namespace WebApplication1.Models
 
         [Display(Name = "Биография")]
         public string biography { get; set;}
-       
+
+        [Display(Name = "Фото")]
         public byte[] photo { get; set; }
         public string photoType { get; set; }
+
+        public ICollection<Picture> pictures { get; set; } 
+
+        //Создаем конструктор класса 
+        public Painter()
+        {
+            this.pictures = new List<Picture>();
+        }
     }
 }

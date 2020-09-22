@@ -20,9 +20,13 @@ namespace WebApplication1.Models
         [Display(Name = "Музей")]
         public string museum { get; set; }
 
+        [Display(Name = "Фото")]
         public byte[] canvas { get; set; }
         public string canvasType { get; set; }
-        
 
+        [Display(Name = "Художник")]
+        public int painterId { get; set; }
+
+        public Painter painter{ get; set; }
     }
 }

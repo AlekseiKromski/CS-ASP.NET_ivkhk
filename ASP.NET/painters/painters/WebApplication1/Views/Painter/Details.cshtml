@@ -17,7 +17,7 @@
             </p>
             @if (Model.photo != null)
             {
-                <img src="@Url.Action("GetImage", new { Model.id })" class="img-rounded img" />
+                <img src="@Url.Action("GetImage", new { Model.id })" class="img-rounded img-details" />
             }
             <p class="margint-2">
                 <b>
@@ -28,26 +28,12 @@
         </div>
     </div>
 </div>
-<!-- После того, как будет работать система картин
+<hr />
 <h2>Картины художника @Model.name</h2>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <h4>@Model.name</h4>
-            <p>
-                <b>
-                    Museum:
-                </b>
+@{ 
+    Html.RenderAction("PicturesInPainters", new { id = Model.id });
+}
 
-            </p>
-            @if (Model.photo != null)
-            {
-                <img src="@Url.Action("GetImage", new { Model.id })" class="img-rounded img" />
-            }
-        </div>
-    </div>
-</div>
-    -->
-<p>
+<p class="margint-2">
     @Html.ActionLink("Художники", "Index")
 </p>

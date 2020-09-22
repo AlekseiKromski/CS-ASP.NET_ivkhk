@@ -28,6 +28,8 @@ namespace WebApplication1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Painter painter = db.Painter.Find(id);
+            painter = db.Painter.Include(p => p.pictures).FirstOrDefault(p => p.id == id);
+
             if (painter == null)
             {
                 return HttpNotFound();
@@ -50,7 +52,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(img != null)
+                if (img != null)
                 {
                     painter.photoType = img.ContentType;
                     painter.photo = new byte[img.ContentLength];
@@ -146,6 +148,13 @@ namespace WebApplication1.Controllers
                 return File(painter.photo, painter.photoType);
             }
             return null;
+        }
+
+        [ChildActionOnly]
+        public ActionResult PicturesInPainters(int id)
+        {
+            var pp = db.Picture.Where(p => p.painterId == id);
+            return PartialView(pp);
         }
     }
 }
