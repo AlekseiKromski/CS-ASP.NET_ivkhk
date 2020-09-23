@@ -1,0 +1,24 @@
+﻿@model WebApplication1.Models.Painter
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+
+<h2>Browsing painter: @Model.name</h2>
+@if(Model.pictures.Count() > 0)
+{
+    <ul>
+        @foreach(var p in Model.pictures)
+        {
+            <li>
+                
+                <a href="@Url.Action("Details", "Pictures", new { id = Model.id })">@p.title - year (@p.year)</a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No pictures</p>
+}

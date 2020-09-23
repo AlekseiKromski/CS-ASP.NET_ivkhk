@@ -35,3 +35,23 @@ textarea {
 .img-details {
     width: 50%;
 }
+.img-table {
+    width: 100%;
+}
+#categories {
+    font-family: Constantia, Georgia, serif;
+    font-size: 16px;
+    list-style-type: none;
+    border-right: #5d5a53 1px dotted;
+    padding-right: 10px;
+    padding-top: 25px;
+    margin: 0 25px 0 0;
+    float: left;
+}
+    #categories a:link, #categories a:visited {
+        color: #9B9993;
+        text-decoration: none;
+    }
+    #categories a:hover {
+        color: #F46739;
+    }
