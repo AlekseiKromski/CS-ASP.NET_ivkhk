@@ -7,11 +7,12 @@
 <h2>Меню художники</h2>
 
 <ul id="categories">
-    <li>@Html.ActionLink("All Teams", "Index")</li>
-    @foreach(var item in Model)
+    <li>@Html.ActionLink("All Gallery", "Gallery")</li>
+    <li>@Html.ActionLink("All Painters", "Index")</li>
+    @foreach (var item in Model)
     {
         <li>
-            @Html.ActionLink(item.name, "Browse","PaintersMenu", new { id = item.id}, null)
+            @Html.ActionLink(item.name, "Browse", "PaintersMenu", new { id = item.id }, null)
         </li>
     }
 </ul>

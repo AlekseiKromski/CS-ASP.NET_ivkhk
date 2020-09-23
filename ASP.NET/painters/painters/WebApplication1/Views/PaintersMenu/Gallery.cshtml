@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApplication1.Models.Picture>
+
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var picture in Model)
+        {
+            <div class="col-md-3 text-center">
+                <h3>@picture.title</h3>
+                <h4>@picture.painter</h4>
+                @if (picture.canvas != null)
+                {
+                    <img src="@Url.Action("GetImage","Pictures", new { picture.id })" class="img-rounded img" />
+                }
+                    <div class="margint-2">
+                        @Html.ActionLink("Details", "Details", "Pictures", new { id = picture.id }, null)
+                    </div>
+            </div>
+        }
+    </div>
+</div>

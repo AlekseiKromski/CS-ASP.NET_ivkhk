@@ -32,5 +32,11 @@ namespace WebApplication1.Controllers
             var painterPictures = db.Painter.Include("Pictures").Single(g => g.id == id);
             return View(painterPictures);
         }
+
+        public ActionResult Gallery()
+        {
+            var pictures = db.Picture.ToList();
+            return View(pictures);
+        }
     }
 }
