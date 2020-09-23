@@ -24,7 +24,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.painter.name)
+            <a href="@Url.Action("Details", "Painter", new { id = Model.painter.id })">@Model.painter.name</a>
         </dd>
 
         <dt>
