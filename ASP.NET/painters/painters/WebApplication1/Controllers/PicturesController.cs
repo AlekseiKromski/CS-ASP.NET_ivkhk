@@ -32,6 +32,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+            picture = db.Picture.Include(p => p.painter).FirstOrDefault(t => t.id == id);
             return View(picture);
         }
 

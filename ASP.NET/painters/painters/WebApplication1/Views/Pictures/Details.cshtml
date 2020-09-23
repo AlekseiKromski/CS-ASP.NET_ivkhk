@@ -10,12 +10,21 @@
     <h4>Picture</h4>
     <hr />
     <dl class="dl-horizontal">
+
         <dt>
             @Html.DisplayNameFor(model => model.title)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            Автор:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.painter.name)
         </dd>
 
         <dt>
