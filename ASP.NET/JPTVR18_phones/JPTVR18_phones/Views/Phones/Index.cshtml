@@ -1,0 +1,46 @@
+﻿
+@model PagedList.IPagedList<JPTVR18_phones.Models.Phones>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>index</h2>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Company
+        </th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.name)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из
+@Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
