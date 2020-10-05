@@ -32,6 +32,15 @@
         </div>
     </div>
     <div class="container body-content">
+        <div style="margin-top:30px; margin-bottom30px; text-align:right">
+            Найти модель по названию:
+            @using(Ajax.BeginForm("PhoneSearch", "Phones", new AjaxOptions { UpdateTargetId = "results" }))
+            {
+                <input type="text" name="PhoneName" placeholder="Введите название модели" />
+                <input type="submit" value="Search" />
+            }
+        </div>
+        <div id="results"></div>
         @RenderBody()
         <hr />
         <footer>

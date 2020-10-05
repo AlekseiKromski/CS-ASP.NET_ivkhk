@@ -1,0 +1,20 @@
+﻿@model IEnumerable<JPTVR18_phones.Models.Phones>
+
+@{
+    ViewBag.Title = "PhoneSearch";
+}
+
+<div id="searchresults">
+    <p>
+        Найдены по запросу: @Model.Count() моделей
+    </p>
+    <ul>
+        @foreach(var item in Model)
+        {
+            <li>
+                @Html.ActionLink(@item.name, "Details", new { id = item.id }, null) - 
+                @Html.DisplayFor(modelItem => item.price)
+            </li>
+        }
+    </ul>
+</div>

@@ -48,5 +48,16 @@ namespace JPTVR18_phones.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult PhoneSearch(string PhoneName)
+        {
+            var allPhones = db.Phones.Include(a => a.Company).Where(b => b.name.Contains(PhoneName)).OrderByDescending(t => t.price).ToList();
+            if (allPhones.Count <= 0 )
+            {
+                return HttpNotFound();
+            }
+            return PartialView(allPhones);
+        }
     }
 }
