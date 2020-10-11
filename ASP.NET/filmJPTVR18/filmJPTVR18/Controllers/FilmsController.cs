@@ -13,7 +13,7 @@ namespace filmJPTVR18.Controllers
 {
     public class FilmsController : Controller
     {
-        private filmJPTVR18Entities db = new filmJPTVR18Entities();
+        private filmJPTVR18Entities2 db = new filmJPTVR18Entities2();
 
         // GET: Films
         public ActionResult Index()
@@ -51,13 +51,13 @@ namespace filmJPTVR18.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(Image != null && Image.ContentLength > 0)
+                if (Image != null)
                 {
-                    var fileName = Path.GetFileName(Image.FileName);
-                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                    Image.SaveAs(path);
-                    film.Image = path;
+                    film.ImageType = Image.ContentType;
+                    film.Image = new byte[Image.ContentLength];
+                    Image.InputStream.Read(film.Image, 0, Image.ContentLength);
                 }
+
                 db.Films.Add(film);
                 db.SaveChanges();
                 return RedirectToAction("Index");

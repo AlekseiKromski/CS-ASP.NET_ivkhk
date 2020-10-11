@@ -1,4 +1,5 @@
-﻿using System;
+﻿using filmJPTVR18.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,12 @@ namespace filmJPTVR18.Controllers
 {
     public class HomeController : Controller
     {
+
+        private filmJPTVR18Entities2 db = new filmJPTVR18Entities2();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.Films.OrderByDescending(v => v.Id).Take(3).ToList());
         }
 
         public ActionResult About()
