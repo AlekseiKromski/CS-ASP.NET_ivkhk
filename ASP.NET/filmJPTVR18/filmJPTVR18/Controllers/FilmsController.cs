@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using filmJPTVR18.Models;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using filmJPTVR18.Models;
 
 namespace filmJPTVR18.Controllers
 {
@@ -18,7 +15,7 @@ namespace filmJPTVR18.Controllers
         // GET: Films
         public ActionResult Index()
         {
-            return View(db.Films.OrderByDescending(v => v.Id).Take(3).ToList());
+            return View(db.Films.ToList());
         }
 
         // GET: Films/Details/5
@@ -130,6 +127,23 @@ namespace filmJPTVR18.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //Get image
+        public FileContentResult GetImage(int id)
+        {
+            Film film = db.Films.FirstOrDefault(f => f.Id == id);
+            if (film.Image != null)
+            {
+                return File(film.Image, film.ImageType);
+            }
+            return null;
+        }
+
+        [ChildActionOnly]
+        public ActionResult GetFilmAuthors(int id)
+        {
+            return PartialView(db.FilmActors.Include(fa => fa.Actor).Where( fa => fa.FilmId == id));
         }
     }
 }

@@ -30,5 +30,15 @@ namespace filmJPTVR18.Controllers
 
             return View();
         }
+
+        public FileContentResult GetImage(int id)
+        {
+            Film film = db.Films.FirstOrDefault(f => f.Id == id);
+            if (film.Image != null)
+            {
+                return File(film.Image, film.ImageType);
+            }
+            return null;
+        }
     }
 }

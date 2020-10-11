@@ -25,8 +25,8 @@
     <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="Description" Type="text" />
-    <Property Name="Image" Type="image" />
-    <Property Name="ImageType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="ImageType" Type="nvarchar(max)" />
     <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_FilmActor_Actor">
