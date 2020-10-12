@@ -59,7 +59,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="filmJPTVR18Entities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="filmJPTVR18Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Actors" EntityType="Self.Actor" />
     <EntitySet Name="FilmActors" EntityType="Self.FilmActor" />
     <EntitySet Name="Films" EntityType="Self.Film" />

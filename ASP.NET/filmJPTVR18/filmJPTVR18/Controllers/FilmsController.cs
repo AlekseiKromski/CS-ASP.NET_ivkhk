@@ -10,9 +10,10 @@ namespace filmJPTVR18.Controllers
 {
     public class FilmsController : Controller
     {
-        private filmJPTVR18Entities2 db = new filmJPTVR18Entities2();
+        private filmJPTVR18Entities db = new filmJPTVR18Entities();
 
         // GET: Films
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             return View(db.Films.ToList());
@@ -34,6 +35,7 @@ namespace filmJPTVR18.Controllers
         }
 
         // GET: Films/Create
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -42,6 +44,7 @@ namespace filmJPTVR18.Controllers
         // POST: Films/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Title,Year,Description,Image,ImageType,Country")] Film film, HttpPostedFileBase Image)
@@ -64,6 +67,7 @@ namespace filmJPTVR18.Controllers
         }
 
         // GET: Films/Edit/5
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace filmJPTVR18.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit([Bind(Include = "Id,Title,Year,Description,Image,ImageType,Country")] Film film, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
@@ -102,6 +107,7 @@ namespace filmJPTVR18.Controllers
         }
 
         // GET: Films/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -117,6 +123,7 @@ namespace filmJPTVR18.Controllers
         }
 
         // POST: Films/Delete/5
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

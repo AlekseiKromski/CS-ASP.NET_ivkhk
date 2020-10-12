@@ -25,9 +25,12 @@
                     <li>@Html.ActionLink("Фильмы", "Films", "Home")</li>
                     <li>@Html.ActionLink("Архив фильмов", "FilmsWithSearch", "Home")</li>
                     <!-- Admin links -->
-                    <li>@Html.ActionLink("FilmAction", "Index", "Films")</li>
-                    <li>@Html.ActionLink("ActorsAction", "Index", "Actors")</li>
-                    <li>@Html.ActionLink("FilmsActorsAction", "Index", "FilmActors")</li>
+                    @if (Request.IsAuthenticated && User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("FilmAction", "Index", "Films")</li>
+                        <li>@Html.ActionLink("ActorsAction", "Index", "Actors")</li>
+                        <li>@Html.ActionLink("FilmsActorsAction", "Index", "FilmActors")</li>
+                    }
 
                 </ul>
                 @Html.Partial("_LoginPartial")

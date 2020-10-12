@@ -13,7 +13,7 @@ namespace filmJPTVR18.Controllers
     public class HomeController : Controller
     {
 
-        private filmJPTVR18Entities2 db = new filmJPTVR18Entities2();
+        private filmJPTVR18Entities db = new filmJPTVR18Entities();
 
         public ActionResult Index()
         {
