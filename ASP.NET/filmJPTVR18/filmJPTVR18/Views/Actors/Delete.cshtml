@@ -32,7 +32,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @if (Model.Image != null)
+            {
+                <img src="@Url.Action("GetImage", new { id = Model.Id })" class="img-30" />
+            }
         </dd>
 
     </dl>

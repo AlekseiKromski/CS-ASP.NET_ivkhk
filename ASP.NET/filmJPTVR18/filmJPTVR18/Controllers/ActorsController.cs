@@ -86,10 +86,16 @@ namespace filmJPTVR18.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Image")] Actor actor)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,SecondName,Image, ImageType")] Actor actor, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
+                if (Image != null)
+                {
+                    actor.ImageType = Image.ContentType;
+                    actor.Image = new byte[Image.ContentLength];
+                    Image.InputStream.Read(actor.Image, 0, Image.ContentLength);
+                }
                 db.Entry(actor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -130,6 +136,23 @@ namespace filmJPTVR18.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //Get image
+        public FileContentResult GetImage(int id)
+        {
+            Actor actor = db.Actors.FirstOrDefault(f => f.Id == id);
+            if(actor.Image != null)
+            {
+                return File(actor.Image, actor.ImageType);
+            }
+            return null;
+        }
+
+        //Get films partial view
+        public ActionResult getActorFilm(int id)
+        {
+            return PartialView(this.db.FilmActors.Include( fa => fa.Film ).Where(fa => fa.ActorId == id));
         }
     }
 }

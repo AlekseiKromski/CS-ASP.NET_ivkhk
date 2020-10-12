@@ -1,0 +1,8 @@
+﻿@model IEnumerable<filmJPTVR18.Models.FilmActor>
+
+<ul>
+    @foreach(var film in Model)
+    {
+        <li>@film.Film.Title</li>
+    }
+</ul>
