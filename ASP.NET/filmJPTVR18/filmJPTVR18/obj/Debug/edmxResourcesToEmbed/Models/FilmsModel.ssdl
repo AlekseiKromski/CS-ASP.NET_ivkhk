@@ -7,7 +7,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="SecondName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Image" Type="text" />
+    <Property Name="Image" Type="image" />
+    <Property Name="ImageType" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="FilmActor">
     <Key>

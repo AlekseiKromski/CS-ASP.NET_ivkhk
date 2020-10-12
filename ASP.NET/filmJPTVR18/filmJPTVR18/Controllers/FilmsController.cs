@@ -18,21 +18,6 @@ namespace filmJPTVR18.Controllers
             return View(db.Films.ToList());
         }
 
-        // GET: Films/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Film film = db.Films.Find(id);
-            if (film == null)
-            {
-                return HttpNotFound();
-            }
-            return View(film);
-        }
-
         // GET: Films/Create
         public ActionResult Create()
         {
@@ -44,7 +29,7 @@ namespace filmJPTVR18.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Year,Description,Image,Country")] Film film, HttpPostedFileBase Image)
+        public ActionResult Create([Bind(Include = "Id,Title,Year,Description,Image,ImageType,Country")] Film film, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
@@ -83,10 +68,17 @@ namespace filmJPTVR18.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Year,Description,Image,ImageType,Country")] Film film)
+        public ActionResult Edit([Bind(Include = "Id,Title,Year,Description,Image,ImageType,Country")] Film film, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
+                if (Image != null)
+                {
+                    film.ImageType = Image.ContentType;
+                    film.Image = new byte[Image.ContentLength];
+                    Image.InputStream.Read(film.Image, 0, Image.ContentLength);
+                }
+
                 db.Entry(film).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

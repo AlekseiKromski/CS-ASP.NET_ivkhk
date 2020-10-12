@@ -7,7 +7,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ImageType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="FilmActors" Relationship="Self.FK_FilmActor_Actor" FromRole="Actors" ToRole="FilmActor" />
   </EntityType>
   <EntityType Name="FilmActor">

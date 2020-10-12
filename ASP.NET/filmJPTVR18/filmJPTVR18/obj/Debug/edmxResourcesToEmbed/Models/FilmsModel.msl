@@ -8,6 +8,7 @@
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="SecondName" ColumnName="SecondName" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ImageType" ColumnName="ImageType" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -25,9 +25,9 @@
                     <li>@Html.ActionLink("Фильмы", "Films", "Home")</li>
                     <li>@Html.ActionLink("Архив фильмов", "About", "Home")</li>
                     <!-- Admin links -->
-                    <li>@Html.ActionLink("Панель фильмов - admin", "About", "Home")</li>
-                    <li>@Html.ActionLink("Панель актеров - admin", "About", "Home")</li>
-                    <li>@Html.ActionLink("Панель актеров и фильмов - admin", "About", "Home")</li>
+                    <li>@Html.ActionLink("FilmAction", "Index", "Films")</li>
+                    <li>@Html.ActionLink("ActorsAction", "Index", "Actors")</li>
+                    <li>@Html.ActionLink("FilmsActorsAction", "About", "Home")</li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")

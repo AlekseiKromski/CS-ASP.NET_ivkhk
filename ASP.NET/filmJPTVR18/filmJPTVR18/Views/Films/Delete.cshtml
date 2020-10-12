@@ -40,15 +40,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageType)
+            @if(Model.Image != null)
+            {
+                <img src="@Url.Action("GetImage", new { id = Model.Id })" class="img-30"/>
+            }
         </dd>
 
         <dt>
