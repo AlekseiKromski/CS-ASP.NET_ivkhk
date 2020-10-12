@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace filmJPTVR18.Controllers
 {
@@ -15,6 +16,11 @@ namespace filmJPTVR18.Controllers
         public ActionResult Index()
         {
             return View(db.Films.OrderByDescending(v => v.Id).Take(3).ToList());
+        }
+
+        public ActionResult Films()
+        {
+            return View(db.Films.ToList());
         }
 
         public ActionResult About()
@@ -39,6 +45,12 @@ namespace filmJPTVR18.Controllers
                 return File(film.Image, film.ImageType);
             }
             return null;
+        }
+
+        [ChildActionOnly]
+        public ActionResult GetFilmAuthors(int id)
+        {
+            return PartialView(db.FilmActors.Include(f => f.Actor).Where(f => f.FilmId == id));
         }
     }
 }

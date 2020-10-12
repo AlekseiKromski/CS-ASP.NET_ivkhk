@@ -139,11 +139,5 @@ namespace filmJPTVR18.Controllers
             }
             return null;
         }
-
-        [ChildActionOnly]
-        public ActionResult GetFilmAuthors(int id)
-        {
-            return PartialView(db.FilmActors.Include(fa => fa.Actor).Where( fa => fa.FilmId == id));
-        }
     }
 }

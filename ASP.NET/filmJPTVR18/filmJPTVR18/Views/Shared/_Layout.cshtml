@@ -22,8 +22,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Фильмы", "Index", "Films")</li>
+                    <li>@Html.ActionLink("Фильмы", "Films", "Home")</li>
                     <li>@Html.ActionLink("Архив фильмов", "About", "Home")</li>
+                    <!-- Admin links -->
+                    <li>@Html.ActionLink("Панель фильмов - admin", "About", "Home")</li>
+                    <li>@Html.ActionLink("Панель актеров - admin", "About", "Home")</li>
+                    <li>@Html.ActionLink("Панель актеров и фильмов - admin", "About", "Home")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

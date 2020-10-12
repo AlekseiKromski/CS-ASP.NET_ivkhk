@@ -208,3 +208,5 @@ C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\obj
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\obj\Debug\filmJPTVR18.dll
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\obj\Debug\filmJPTVR18.pdb
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\bin\ru\EntityFramework.resources.dll
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\ru\EntityFramework.resources.dll
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\obj\Debug\filmJPTVR18.csprojAssemblyReference.cache
