@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using PagedList.Mvc;
+using PagedList;
 
 namespace filmJPTVR18.Controllers
 {
@@ -51,6 +53,29 @@ namespace filmJPTVR18.Controllers
         public ActionResult GetFilmAuthors(int id)
         {
             return PartialView(db.FilmActors.Include(f => f.Actor).Where(f => f.FilmId == id));
+        }
+        
+        //Show films with search 
+        public ActionResult FilmsWithSearch(int? page)
+        {
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            var films = db.Films.OrderBy(f => f.Id).ToList();
+            return View(films.ToPagedList(pageNumber, pageSize));
+        }
+
+        [HttpPost]
+        //Show films by ajax search 
+        public ActionResult FilmsWithSearchPost(string FilmName, int? page)
+        {
+            var films = this.db.Films.Where(f => f.Title.Contains(FilmName)).ToList();
+            if(films.Count <= 0){
+                return HttpNotFound();
+            }
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return PartialView(films.ToPagedList(pageNumber, pageSize));
         }
     }
 }
