@@ -24,7 +24,7 @@ namespace filmJPTVR18.Controllers
         // GET: FilmActors/Create
         public ActionResult Create()
         {
-            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FirstName");
+            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FullName");
             ViewBag.FilmId = new SelectList(db.Films, "Id", "Title");
             return View();
         }
@@ -43,7 +43,7 @@ namespace filmJPTVR18.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FirstName", filmActor.ActorId);
+            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FullName", filmActor.ActorId);
             ViewBag.FilmId = new SelectList(db.Films, "Id", "Title", filmActor.FilmId);
             return View(filmActor);
         }
@@ -60,7 +60,7 @@ namespace filmJPTVR18.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FirstName", filmActor.ActorId);
+            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FullName", filmActor.ActorId);
             ViewBag.FilmId = new SelectList(db.Films, "Id", "Title", filmActor.FilmId);
             return View(filmActor);
         }
@@ -78,7 +78,7 @@ namespace filmJPTVR18.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FirstName", filmActor.ActorId);
+            ViewBag.ActorId = new SelectList(db.Actors, "Id", "FullName", filmActor.ActorId);
             ViewBag.FilmId = new SelectList(db.Films, "Id", "Title", filmActor.FilmId);
             return View(filmActor);
         }

@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="filmJPTVR18ModelStoreContainer" CdmEntityContainer="filmJPTVR18Entities2">
+  <EntityContainerMapping StorageEntityContainer="Хранилище filmJPTVR18ModelContainer" CdmEntityContainer="filmJPTVR18Entities2">
     <EntitySetMapping Name="Actors">
       <EntityTypeMapping TypeName="filmJPTVR18Model.Actor">
         <MappingFragment StoreEntitySet="Actors">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="ImageType" ColumnName="ImageType" />
         </MappingFragment>

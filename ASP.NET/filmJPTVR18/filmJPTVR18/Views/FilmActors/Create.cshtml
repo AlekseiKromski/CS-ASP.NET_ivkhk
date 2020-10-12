@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>FilmActor</h4>
         <hr />
@@ -27,14 +27,6 @@
             @Html.LabelFor(model => model.ActorId, "Actor", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ActorId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.DropDownList("MySkills", new List<SelectListItem>
-           {
-                   foreach (var film in Model)
-                    {
-                        new SelectListItem { Text = "ASP.NET MVC", Value = "1" },
-                    }
-
-                })
                 @Html.ValidationMessageFor(model => model.ActorId, "", new { @class = "text-danger" })
             </div>
         </div>

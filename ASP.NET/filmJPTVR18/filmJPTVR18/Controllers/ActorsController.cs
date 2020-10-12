@@ -57,7 +57,7 @@ namespace filmJPTVR18.Controllers
                     actor.Image = new byte[Image.ContentLength];
                     Image.InputStream.Read(actor.Image, 0, Image.ContentLength);
                 }
-
+                actor.FullName = actor.FirstName + " " + actor.SecondName;
                 db.Actors.Add(actor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -96,6 +96,7 @@ namespace filmJPTVR18.Controllers
                     actor.Image = new byte[Image.ContentLength];
                     Image.InputStream.Read(actor.Image, 0, Image.ContentLength);
                 }
+                actor.FullName = actor.FirstName + " " + actor.SecondName;
                 db.Entry(actor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
