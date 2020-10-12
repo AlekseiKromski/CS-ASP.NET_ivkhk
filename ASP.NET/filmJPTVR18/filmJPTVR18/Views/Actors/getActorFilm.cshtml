@@ -3,6 +3,8 @@
 <ul>
     @foreach(var film in Model)
     {
-        <li>@film.Film.Title</li>
+        <li>
+            @Html.ActionLink(film.Film.Title, "Details", "Films", new { film.Film.Id }, null)
+        </li>
     }
 </ul>

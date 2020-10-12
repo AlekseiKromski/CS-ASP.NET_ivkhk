@@ -8,7 +8,7 @@
     @foreach (var actor in Model)
     {
         <li>
-            @Html.ActionLink(actor.Actor.FirstName, "Details", "Actors", new { id = actor.Actor.Id })
+            @Html.ActionLink(actor.Actor.FirstName, "Details", "Actors", new { actor.Actor.Id }, null)
         </li>
     }
 </ul>

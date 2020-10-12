@@ -121,10 +121,19 @@ namespace filmJPTVR18.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Film film = db.Films.Find(id);
-            db.Films.Remove(film);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var fa = this.db.FilmActors.Include(f => f.Film).FirstOrDefault(f => f.FilmId == id);
+            if (fa != null)
+            {
+                return RedirectToAction("Delete", "FilmActors", new { id = fa.Id });
+            }
+            else
+            {
+                Film film = db.Films.Find(id);
+                db.Films.Remove(film);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

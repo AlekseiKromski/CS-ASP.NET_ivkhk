@@ -4,16 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <h3>Admin panel</h3>
-            @Html.ActionLink("Create New", "Create", "Films", new { @class = "btn btn-success" })
-            <hr />
-        </div>
-    </div>
-</div>
-
 <div class="container-fluid mt-2">
     <div class="row justify-content-center">
         @foreach (var film in Model)

@@ -172,6 +172,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActorsController.cs" />
+    <Compile Include="Controllers\FilmActorsController.cs" />
     <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -299,6 +300,10 @@
     <Content Include="Views\Actors\Index.cshtml" />
     <Content Include="Views\Actors\getActorFilm.cshtml" />
     <Content Include="Views\Films\Details.cshtml" />
+    <Content Include="Views\FilmActors\Create.cshtml" />
+    <Content Include="Views\FilmActors\Delete.cshtml" />
+    <Content Include="Views\FilmActors\Edit.cshtml" />
+    <Content Include="Views\FilmActors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
