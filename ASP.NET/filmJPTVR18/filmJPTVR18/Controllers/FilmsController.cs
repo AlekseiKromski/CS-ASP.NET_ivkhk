@@ -145,6 +145,12 @@ namespace filmJPTVR18.Controllers
             base.Dispose(disposing);
         }
 
+        //Show films with search 
+        public ActionResult FilmsWithSearch()
+        {
+
+        }
+
         //Get image
         public FileContentResult GetImage(int id)
         {
