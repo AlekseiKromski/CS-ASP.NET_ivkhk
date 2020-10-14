@@ -18,7 +18,7 @@ namespace filmJPTVR18.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
-            return View(db.Actors.ToList());
+            return View(db.Actors.OrderByDescending(f => f.Id).ToList());
         }
 
         // GET: Actors/Details/5
@@ -131,10 +131,20 @@ namespace filmJPTVR18.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Actor actor = db.Actors.Find(id);
-            db.Actors.Remove(actor);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var fa = this.db.FilmActors.Include(f => f.Actor).FirstOrDefault(f => f.ActorId == id);
+            if (fa != null)
+            {
+                return RedirectToAction("Delete", "FilmActors", new { id = fa.Id });
+            }
+            else
+            {
+                Actor actor = db.Actors.Find(id);
+                db.Actors.Remove(actor);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            
         }
 
         protected override void Dispose(bool disposing)

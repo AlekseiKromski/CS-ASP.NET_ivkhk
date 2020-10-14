@@ -215,3 +215,8 @@ C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\bin
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.xml
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.Mvc.xml
 C:\Users\yanikarp\Documents\CS-ASP.NET_ivkhk\ASP.NET\filmJPTVR18\filmJPTVR18\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.dll
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.Mvc.dll
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.xml
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\PagedList.Mvc.xml
+D:\JPTVR18\C#_IVKHK\ASP.NET\filmJPTVR18\filmJPTVR18\bin\ru\EntityFramework.SqlServer.resources.dll

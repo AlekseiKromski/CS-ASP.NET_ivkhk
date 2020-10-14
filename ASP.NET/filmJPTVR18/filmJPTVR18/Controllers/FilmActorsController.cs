@@ -18,7 +18,7 @@ namespace filmJPTVR18.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
-            var filmActors = db.FilmActors.Include(f => f.Actor).Include(f => f.Film);
+            var filmActors = db.FilmActors.Include(f => f.Actor).Include(f => f.Film).OrderByDescending(f => f.Id);
             return View(filmActors.ToList());
         }
 

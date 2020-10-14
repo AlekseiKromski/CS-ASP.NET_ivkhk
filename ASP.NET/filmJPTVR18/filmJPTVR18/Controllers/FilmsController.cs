@@ -16,7 +16,7 @@ namespace filmJPTVR18.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
-            return View(db.Films.ToList());
+            return View(db.Films.OrderByDescending(f => f.Id).ToList());
         }
 
         // GET: Films/Details/5

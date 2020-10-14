@@ -22,7 +22,7 @@ namespace filmJPTVR18.Controllers
 
         public ActionResult Films()
         {
-            return View(db.Films.ToList());
+            return View(db.Films.OrderByDescending(f => f.Id).ToList());
         }
 
         public ActionResult About()
@@ -60,7 +60,7 @@ namespace filmJPTVR18.Controllers
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            var films = db.Films.OrderBy(f => f.Id).ToList();
+            var films = db.Films.OrderByDescending(f => f.Id).ToList();
             return View(films.ToPagedList(pageNumber, pageSize));
         }
 
@@ -68,14 +68,13 @@ namespace filmJPTVR18.Controllers
         //Show films by ajax search 
         public ActionResult FilmsWithSearchPost(string FilmName, int? page)
         {
+
             var films = this.db.Films.Where(f => f.Title.Contains(FilmName)).ToList();
-            if(films.Count <= 0){
+            if (films.Count <= 0)
+            {
                 return HttpNotFound();
             }
-
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
-            return PartialView(films.ToPagedList(pageNumber, pageSize));
+            return PartialView(films);
         }
     }
 }
